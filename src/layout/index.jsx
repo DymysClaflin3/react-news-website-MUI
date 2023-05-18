@@ -1,14 +1,16 @@
 import { AppBar, Toolbar, Typography, Container } from "@mui/material";
 
-const Layout = ({ children }) => {
+const Layout = ({ header: { title, action }, children }) => {
   return (
     <>
       <AppBar>
         <Toolbar>
-          <Typography variant="h5" textAlign='center'>Top articles and announcements</Typography>
+          <Typography variant="h5" textAlign='center'>{title}</Typography>
+          <div style={{flexGrow: 1}}></div>
+          {action}
         </Toolbar>
       </AppBar>
-      <Container sx={{marginTop: 10}}>
+      <Container sx={{marginTop: '70px'}}>
         {children}
       </Container>
     </>
