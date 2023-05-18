@@ -5,7 +5,7 @@ const Layout = ({ children }) => {
     <>
       <AppBar>
         <Toolbar>
-          <Typography variant="h5">Title</Typography>
+          <Typography variant="h5" textAlign='center'>Top articles and announcements</Typography>
         </Toolbar>
       </AppBar>
       <Container sx={{marginTop: 10}}>

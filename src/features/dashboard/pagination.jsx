@@ -6,7 +6,6 @@ import {
   Typography,
   CardActionArea,
   Pagination,
-  Box
 } from "@mui/material";
 import { useState } from "react";
 import styled from "styled-components";
@@ -47,19 +46,23 @@ const ArticleViewer = ({ data }) => {
           </CardContent>
         </Card>
 
-        <Card sx={{ width: 400, minHeight: 430 }}>
-          <CardActionArea>
-            <CardMedia sx={{ height: 250 }} image={next.urlToImage} />
-          </CardActionArea>
-          <CardContent>
-            <Typography variant="h5" gutterBottom>
-              {next.source.name}
-            </Typography>
-            <Typography variant="h6" color="GrayText">
-              {next.title}
-            </Typography>
-          </CardContent>
-        </Card>
+        {
+          next && (
+            <Card sx={{ width: 400, minHeight: 430 }}>
+              <CardActionArea>
+                <CardMedia sx={{ height: 250 }} image={next.urlToImage} />
+              </CardActionArea>
+              <CardContent>
+                <Typography variant="h5" gutterBottom>
+                  {next.source.name}
+                </Typography>
+                <Typography variant="h6" color="GrayText">
+                  {next.title}
+                </Typography>
+              </CardContent>
+            </Card>
+          ) 
+        }
       </Stack>
 
       <Stack mt={2} justifyContent='center'>
